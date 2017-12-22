@@ -1,4 +1,4 @@
-package com.webitalkie.spring_webflux;
+package com.webitalkie.springmvc;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
