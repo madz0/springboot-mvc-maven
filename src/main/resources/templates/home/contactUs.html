@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layout">
+<head>
+<title>Contact us</title>
+</head>
+<body>
+	<section layout:fragment="content">
+		<h1>Spring Boot Web Thymeleaf Contact us page</h1>
+		<h2>
+			<span th:text="'Message: ' + ${message} + ' session: ' + ${sesstest}"></span>
+		</h2>
+		<br>
+		<form action="#" th:action="@{/home/savecontactus}" th:object="${contacts}" method="post">
+			<label th:for="|contacts${idx.incr()}.name|">name</label><input th:field="*{contacts[__${idx.get()}__].name}" />
+			<label th:for="|contacts${idx.get()}.lastName|">last name</label><input th:field="*{contacts[__${idx.get()}__].lastName}" />
+			<label th:for="|contacts${idx.get()}.phone|">phone</label><input th:field="*{contacts[__${idx.get()}__].phone}" />
+			<br>
+			<label th:for="|contacts${idx.incr()}.name|">name</label><input th:field="*{contacts[__${idx.get()}__].name}" />
+			<label th:for="|contacts${idx.get()}.lastName|">last name</label><input th:field="*{contacts[__${idx.get()}__].lastName}" />
+			<label th:for="|contacts${idx.get()}.phone|">phone</label><input th:field="*{contacts[__${idx.get()}__].phone}" />
+			<br><button>Submit</button>
+		</form>
+	</section>
+</body>
+</html>
